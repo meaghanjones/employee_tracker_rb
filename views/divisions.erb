@@ -4,7 +4,7 @@
 <% if @divisions.any?() %>
   <ul>
     <% @divisions.each() do |division| %>
-      <li><a href="/divisions/<%= division.id() %>"><%= division.name() %></a></li>
+      <li><a href="/divisions/<%= division.id() %>" id='<% division.id() %>' ><%= division.name() %></a></li>
       <% end %>
   </ul>
 
@@ -13,3 +13,14 @@
   <p>There are no divisions added yet</p>
 
 <% end %>
+
+
+<div class='container'>
+
+  <button><a href="/employees/new">Add new employee</a></button>
+  <button><a href="/divisions/new">Add new division</a></button>
+  <hr>
+  <button><a href="/employees">View all employee</a></button>
+  <hr>
+  <button><a href="/">Home</a></button>
+</div>

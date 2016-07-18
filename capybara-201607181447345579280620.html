@@ -1,12 +1,18 @@
-<h1>Add new employee:</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Tracker</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Add new employee:</h1>
 
 <form action="/employees" method="post">
 
   <label for="division_id">Select a Division</label>
   <select id="division_id" name="division_id" type='text' required>
-    <% @divisions.each() do |division| %>
-      <option value="<%= division.id()%>"> <%= division.name() %> </option>
-    <% end %>
+    
   </select>
 
   <label for="name">Name of employee:</label>
@@ -23,3 +29,7 @@
   <hr>
   <button><a href="/">Home</a></button>
 </div>
+
+  </div>
+</body>
+</html>

@@ -1,29 +1,26 @@
-<h3> Add an employee to </h3>
+<h1>Current Employees in Database:</h1>
 
 
-<form action="/employees" method="post">
+<% if @employees.any?() %>
+  <ul>
+    <% @employees.each() do |employee| %>
+      <li><a href="/employees/<%= employee.id() %>"><%= employee.name() %></a></li>
+      <% end %>
+  </ul>
 
-  <label for="division_id">Select a Division</label>
-  <select id="division_id" name="division_id" type='text' required>
-    <% @divisions.each() do |division| %>
-      <option value="<%= division.id()%>"> <%= division.name() %> </option>
-    <% end %>
-  </select>
+<% else %>
 
-  <label for="name">Name of employee:</label>
-  <input id="name" name="name" type="text">
+  <p>There are no employees added yet</p>
 
-  <button type="submit">Add employee</button>
-</form>
+<% end %>
 
 <hr>
-<!--
-<div class="container">
-  <a href="/">Home</a>
-  <a href="/divisions">View All Divisions</a>
-  <a href="/divisions/new">Add New Divisions</a>
-</div>
 
-<div class="container">
-  <a href="/"><button class="btn">Home</a>
-</div> -->
+<div class='container'>
+  <button><a href="/employees/new">Add new employee</a></button>
+  <button><a href="/divisions/new">Add new division</a></button>
+  <hr>
+  <button><a href="/divisions">View all division</a></button>
+  <hr>
+  <button><a href="/">Home</a></button>
+</div>
