@@ -18,3 +18,11 @@ end
 get("/divisions/new")do
   erb(:division_form)
 end
+
+post('/divisions') do
+  name = params.fetch("name")
+
+  division = Division.create({:name => name, :id => nil})
+  @divisions = Division.all()
+  erb(:divisions)
+end

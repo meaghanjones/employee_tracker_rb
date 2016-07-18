@@ -4,7 +4,7 @@
 <% if @divisions.any?() %>
   <ul>
     <% @divisions.each() do |division| %>
-      <li><a href="/divisions/<%= division.id() %>"></a>division.name()</li>
+      <li><a href="/divisions/<%= division.id() %>"><%= division.name() %></a></li>
       <% end %>
   </ul>
 
