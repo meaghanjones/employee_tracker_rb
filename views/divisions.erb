@@ -1,0 +1,15 @@
+<h1>Current Divisions in Database:</h1>
+
+
+<% if @divisions.any?() %>
+  <ul>
+    <% @divisions.each() do |division| %>
+      <li><a href="/divisions/<%= division.id() %>"></a>division.name()</li>
+      <% end %>
+  </ul>
+
+<% else %>
+
+  <p>There are no divisions added yet</p>
+
+<% end %>
