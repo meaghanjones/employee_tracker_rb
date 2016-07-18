@@ -1,31 +1,23 @@
-<h1><%= division.name() %></h1>
+<h3> Add an employee to </h3>
 
-<% if @division.employees().any?() %>
-  <h3>Here are all of the employees in this division:</h3>
 
-  <ul>
-    <% @division.employees().each() do |employee| %>
-      <li><%= division.name() %></li>
+<form action="/employees" method="post">
+
+  <label for="division_id">Select a Division</label>
+  <select id="division_id" name="division_id" type='text' required>
+    <% @divisions.each() do |division| %>
+      <option value="<%= division.id()%>"> <%= division.name() %> </option>
     <% end %>
-  </ul>
-
-  <% else %>
-    <p>THere are no employees in this division!</p>
-<% end %>
-
-<h3> Add an employee to <%= @division.name() %> </h3>
-
-<form>
-  <input id="division_id" name="division_id" type="hidden" value="<%@division.id() %>">
+  </select>
 
   <label for="name">Name of employee:</label>
   <input id="name" name="name" type="text">
 
-  <button type="submit"> Add task</button>
+  <button type="submit">Add employee</button>
 </form>
 
 <hr>
-
+<!--
 <div class="container">
   <a href="/">Home</a>
   <a href="/divisions">View All Divisions</a>
@@ -34,4 +26,4 @@
 
 <div class="container">
   <a href="/"><button class="btn">Home</a>
-</div>
+</div> -->
