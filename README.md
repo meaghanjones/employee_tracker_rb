@@ -1,4 +1,4 @@
-# _to-do_
+# Employee Tracker
 
 ##### This application is a demonstration application designed to show classes, tests, views with Sinatra and SQL (no Active Record).
 
@@ -25,7 +25,7 @@ $ bundle install
 In PSQL:
 CREATE DATABASE to_do;
 CREATE TABLE employees (id serial PRIMARY KEY, name varchar);
-CREATE TABLE tasks (id serial PRIMARY KEY, description varchar);
+CREATE TABLE divisions (id serial PRIMARY KEY, description varchar);
 ```
 
 Start the webserver:
